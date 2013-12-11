@@ -1,11 +1,12 @@
-
-///user moment format
+// requires momentjs
+// usage data-bind="date :{value : your_path, format:'DD/MM/YYYYY'}"
 ko.bindingHandlers.date = {
     init: function (element, valueAccessor) {
         var value = ko.utils.unwrapObservable(valueAccessor()),
             dv = ko.unwrap(value.value),
             date = moment(dv),
             invalid = ko.unwrap(value.invalid) || 'invalid date';
+
 
         $(element).on("change", function () {
             var nv = $(this).val();
