@@ -1,6 +1,19 @@
 
 
-//NOTE : this requried momentjs to be loaded moment format
+//NOTE : this requried momentjs to be loaded moment 
+// your date value is in string formatted as YYYY-DD-MM
+// usage , data-bind="kendoDate :your_path"
+/*
+    // sample
+    var vm = {
+        date : '2013-05-05',
+        // other members
+    };
+
+    // HTML
+    <input type="text" data-bind="kendoDate: date" />
+
+*/
 ko.bindingHandlers.kendoDate = {
     init: function (element, valueAccessor) {
         var value = valueAccessor(),
