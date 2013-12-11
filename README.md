@@ -40,24 +40,29 @@ This is one of the most flexible one available in kendoUI, there are too many wa
 and on your server, in this case I'm using C# (ASP.Net MVC), you can have anything you want and comfortable with
 ```csharp
    public async Task<ActionResult> Upload(IEnumerable<HttpPostedFileBase> files)
+    {
+
+        var storeId = Guid.NewGuid().ToString();
+
+        foreach (var file in files)
         {
+            var fileName = Path.GetFileName(file.FileName);
+            var extension = Path.GetExtension(file.FileName) ?? "";
+            byte[] content;
+         
+            var stream = file.InputStream;  //initialise new stream
+            content = new byte[stream.Length];
+            stream.Read(content, 0, content.Length); // read from stream to byte array
 
-            var storeId = Guid.NewGuid().ToString();
+            // TODO, save your content here, anywhere, database , file system
 
-            foreach (var file in files)
-            {
-                var fileName = Path.GetFileName(file.FileName);
-                var extension = Path.GetExtension(file.FileName) ?? "";
-                byte[] content;
-             
-	            var stream = file.InputStream;  //initialise new stream
-	            content = new byte[stream.Length];
-	            stream.Read(content, 0, content.Length); // read from stream to byte array
-
-	            // TODO, save your content here, anywhere, database , file system
-
-            }
-
-            return Json(new { storeId });
         }
 
+        return Json(new { storeId });
+    }
+```
+
+##kendoEditor
+This is  not enabled by default, at least not during the init
+
+##
