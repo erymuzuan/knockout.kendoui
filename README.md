@@ -17,7 +17,7 @@ kendoDate requires momentjs, and your date is the YYYY-MM-DD format, not the Jso
 ```html
     // HTML
     <input type="text" data-bind="kendoDate: date" />
-
+```
 
 ##kendoDateTime
 This is similiar to kendoDate in many aspects except it will use kendoDateTimePicker for your input
@@ -25,7 +25,7 @@ This is similiar to kendoDate in many aspects except it will use kendoDateTimePi
 	var vm = {
 	dateTime : ko.observable('2013-05-05T18:00:00')
 };
-
+```
 ##kendoUpload
 This is one of the most flexible one available in kendoUI, there are too many ways to configure it, I haven't gone a great deal to make as extensible as I could just take the middle road for ease of use
 
