@@ -19,6 +19,8 @@ kendoDate requires momentjs, and your date is the YYYY-MM-DD format, not the Jso
     <input type="text" data-bind="kendoDate: date" />
 ```
 
+See the sample code in jsbin [http://jsbin.com/OmOsEQof/2/]
+
 ##kendoDateTime
 This is similiar to kendoDate in many aspects except it will use kendoDateTimePicker for your input
 ```javascript 
